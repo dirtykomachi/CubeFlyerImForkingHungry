@@ -10,5 +10,9 @@ const greetings = [
     'I love unicorns!!',
     'Joe is awesome!!!',
     'Benjamin is cool!!!',
-    'Lucas is wicked!!'
+    'Lucas is wicked!!',
+    'Not so Square! Very Cube!',
+    'Hello Cube',
+    'No, it\'s cuberman!',
+    'Let me out of this cube!'
 ];
