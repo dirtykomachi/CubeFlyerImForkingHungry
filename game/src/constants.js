@@ -6,5 +6,8 @@ const greetings = [
     'It\'s a plane!',
     '1000% more Cube!',
     'A Whole New Dimension!',
-    'Not so Square! Very Cube!'
+    'Not so Square! Very Cube!',
+    'Hello Cube',
+    'No, it\'s cuberman!',
+    'Let me out of this cube!'
 ];
