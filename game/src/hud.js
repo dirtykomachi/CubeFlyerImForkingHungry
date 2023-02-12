@@ -1,5 +1,7 @@
 var score = 0;
+var highScore = 0;
 var scoreText;
+var highScoreText;
 
 var createHud = function() {
     var hudTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
@@ -14,13 +16,25 @@ var createHud = function() {
     scoreText.width = .5;
     scoreText.height = .15;
 
+    // Create a Text Block that can display the high score
+    highScoreText = new BABYLON.GUI.TextBlock();
+    highScoreText.fontFamily = "Times New Roman, serif";
+    highScoreText.color = "white";
+    highScoreText.fontSize = 48;
+    highScoreText.verticalAlignment = BABYLON.GUI.TextBlock.VERTICAL_ALIGNMENT_TOP;
+    highScoreText.horizontalAlignment = BABYLON.GUI.TextBlock.HORIZONTAL_ALIGNMENT_LEFT;
+    highScoreText.width = .5;
+    highScoreText.height = .15;
+
     updateScoreText();
 
     hudTexture.addControl(scoreText);
+    hudTexture.addControl(highScoreText);
 }
 
 var updateScoreText = function() {
     scoreText.text = "Score: " + score;
+    highScoreText.text = "High Score: " + highScore;
 }
 
 var resetScore = function() {
@@ -32,4 +46,11 @@ var resetScore = function() {
 var addScore = function(points) {
     score += points;
     updateScoreText();
+}
+
+var updateHighScore = function(points) {
+    if (points > highScore) {
+        highScore = points;
+        updateScoreText();
+    }
 }

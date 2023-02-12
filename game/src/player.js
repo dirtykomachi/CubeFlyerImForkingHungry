@@ -26,6 +26,7 @@ class Player extends GameObject {
 
     onDestroy() {
         scene.removeMesh(this.playerMesh);
+        updateHighScore(score);
     }
 
     update(deltaTime) {
