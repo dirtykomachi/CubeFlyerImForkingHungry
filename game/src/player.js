@@ -21,6 +21,7 @@ class Player extends GameObject {
         this.playerMaterial = new BABYLON.StandardMaterial("Player Material", scene);
         this.playerMesh.material = this.playerMaterial;
         this.playerMesh.material.diffuseColor = BABYLON.Color3.Blue();
+        resetScore();
     }
 
     onDestroy() {
@@ -36,6 +37,7 @@ class Player extends GameObject {
         var rnum2 = Math.random();
         var rnum3 = Math.random();
         this.playerMesh.material.diffuseColor = new BABYLON.Color3(rnum1,rnum2,rnum3);
+        addScore(1);
     
         if (this.testGameOver()) {
             this.endGame()
@@ -57,7 +59,6 @@ class Player extends GameObject {
 
         mainMenu.visible = true;
         destroyObject(this);
-        resetScore();
     }
 
     testGameOver() {
